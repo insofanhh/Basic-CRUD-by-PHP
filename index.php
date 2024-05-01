@@ -49,12 +49,13 @@ include './layouts/header.php'; ?>
             echo '          </thead>';
             echo '          <tbody>';
           
-            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) { 
               echo '            <tr class="odd:bg-white even:bg-gray-100">';
               echo '              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">' . $row["name"] . '</td>';
               echo '              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">' . $row["description"] . '</td>';
               echo '              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">' . $row["price"] . '</td>';
-              echo '              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">' . $row["image"] . '</td>';
+              echo '              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                                    <img src="./CRUD_form/' . $row["image"] . '" alt="' . $row["name"] . '" width="100" height="100"></td>';
               echo '              <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">';
               
               echo '                <a href="./CRUD_form/update_pro.php?id=' . $row["id"] . '" class="text-blue-600 hover:text-blue-800">Edit</a> |';
